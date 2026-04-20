@@ -6,7 +6,7 @@ A containerized IoT sensor monitoring dashboard built with a **LEMP stack** (Lin
 
 **For end users**, the dashboard is a standard web application. No installation is required—simply visit the hosted URL in any modern web browser.
 
-- **Access the dashboard:** http://localhost:8080 (if running locally) or the deployed server address.
+- **Access the dashboard:** `http://localhost:8080` (if running locally) or the deployed server address.
 - **User Requirements:** A web browser (Chrome, Firefox, Edge, Safari) with JavaScript enabled.
 
 *The following sections are for developers/administrators who wish to deploy or modify the application.*
@@ -46,38 +46,6 @@ A containerized IoT sensor monitoring dashboard built with a **LEMP stack** (Lin
 ### Steps to Deploy Locally
 
 1. **Clone the repository**
-    + "" + `ash
+   ```bash
    git clone https://github.com/Ntandolis431/secure-sensor-dashboard.git
    cd secure-sensor-dashboard
-    + "" + `
-
-2. **Start the containers**
-    + "" + `ash
-   docker-compose up -d
-    + "" + `
-
-3. **Install Dompdf (if vendor folder is missing)**
-    + "" + `ash
-   docker exec -it encata-web sh -c "cd /var/www/html && COMPOSER_PROCESS_TIMEOUT=2000 php composer.phar require dompdf/dompdf"
-    + "" + `
-
-4. **Create the database table**
-    + "" + `ash
-   docker exec -it encata-db mysql -u sensor_user -psensor_pass sensor_data -e "CREATE TABLE IF NOT EXISTS sensor_readings (id INT AUTO_INCREMENT PRIMARY KEY, temperature DECIMAL(5,2) NOT NULL, humidity DECIMAL(5,2) NOT NULL, reading_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"
-    + "" + `
-
-5. **Access the dashboard**
-   Open your browser and go to http://localhost:8080
-
-## Screenshot
-
-![Secure Sensor Dashboard](https://i.imgur.com/yUpQ6C2.png)
-
-## License
-
-This project is created for educational and portfolio purposes. Feel free to use and modify.
-
----
-
-**Author:** Ntandolis431  
-**GitHub:** [Ntandolis431](https://github.com/Ntandolis431)
