@@ -1,0 +1,28 @@
+# Composer / PHP dependencies
+vendor/
+composer.phar
+composer.lock
+
+# Docker volumes and data
+db_data/
+*.log
+
+# Environment files (if any)
+.env
+.env.local
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
